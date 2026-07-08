@@ -1,0 +1,85 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* 배열은 오래된→새것 순서 그대로 두고, 최신이 위로 보이게 뒤집는다 */
+  flex-direction: column-reverse;
+  gap: 2px;
+  max-height: 32rem;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+}
+
+.entry {
+  border-left: 3px solid transparent;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  min-width: 0;
+}
+
+.in {
+  border-left-color: light-dark(#1a7f37, #7ee2a8);
+  background: light-dark(#f2faf5, #20291f);
+}
+
+.out {
+  border-left-color: light-dark(#4a7dd6, #6f9ce6);
+  background: light-dark(#f0f5fd, #202531);
+}
+
+.meta {
+  border-left-color: light-dark(#bbb, #666);
+  color: light-dark(#777, #999);
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.details {
+  min-width: 0;
+}
+
+.summary {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.time {
+  color: light-dark(#999, #777);
+  flex-shrink: 0;
+}
+
+.mark {
+  flex-shrink: 0;
+}
+
+.frameType {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.raw {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: light-dark(#555, #aaa);
+}
+
+.metaText {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.json {
+  margin: 0.25rem 0 0.25rem 1rem;
+  padding: 0.4rem;
+  background: light-dark(#f6f6f6, #2a2a2a);
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre;
+}

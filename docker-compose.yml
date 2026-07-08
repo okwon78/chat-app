@@ -1,0 +1,17 @@
+# chat-web dev 컨테이너.
+# 전제: chat-server가 호스트에서 :8090으로 떠 있어야 한다
+#   (cd ../chat-server && HTTP_ADDR=:8090 DATABASE_URL=postgres://chat:chat@localhost:5433/chat?sslmode=disable \
+#    REDIS_ADDR=localhost:6380 ENABLE_TEST_API=true go run ./cmd/server)
+# 컨테이너 → 호스트 접근은 host.docker.internal 사용(macOS Docker Desktop).
+# 호스트에 노출하는 포트는 5173 하나뿐 — 이 머신 점유 포트(8080/8090/5432/5433/6379/6380 등)와 충돌 없음.
+services:
+  chat-web:
+    build: .
+    ports:
+      - "5173:5173"
+    environment:
+      # process.env가 .env 파일보다 우선(vite loadEnv) — 호스트용 .env(localhost:8090)를 덮어쓴다
+      VITE_SERVER_TARGET: http://host.docker.internal:8090
+    volumes:
+      - .:/app # 소스 bind mount → HMR
+      - /app/node_modules # 이미지의 node_modules 유지(호스트 것과 분리)

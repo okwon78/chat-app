@@ -1,0 +1,6 @@
+node_modules
+dist
+package-lock.json
+
+# 계획/규칙 문서는 수기 포맷 유지 (포맷 churn 방지)
+*.md

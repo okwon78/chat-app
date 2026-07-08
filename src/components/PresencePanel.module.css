@@ -1,0 +1,44 @@
+.presence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.roster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.chip,
+.meChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid light-dark(#d8d8d8, #444);
+  background: light-dark(#f4f4f4, #2e2e2e);
+}
+
+.meChip {
+  border-color: light-dark(#4a7dd6, #6f9ce6);
+  background: light-dark(#eef3fc, #26303f);
+}
+
+.meTag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: light-dark(#4a7dd6, #6f9ce6);
+  color: #fff;
+}

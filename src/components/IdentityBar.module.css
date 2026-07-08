@@ -1,0 +1,51 @@
+.bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid light-dark(#d0d0d0, #444);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  /* 상단 고정 — 스크롤해도 연결/신원/online이 항상 보이게 (PLAN §6) */
+  position: sticky;
+  top: 0.5rem;
+  z-index: 10;
+  background: light-dark(#ffffff, #1c1c1c);
+}
+
+.online {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.userIdInput {
+  flex: 1;
+  min-width: 16rem;
+}
+
+.state {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.idle {
+  background: light-dark(#eee, #3a3a3a);
+  color: light-dark(#666, #aaa);
+}
+
+.connecting {
+  background: light-dark(#fff3cd, #4a3f1d);
+  color: light-dark(#8a6d00, #ffd965);
+}
+
+.open {
+  background: light-dark(#d9f2e3, #1d3a29);
+  color: light-dark(#1a7f37, #7ee2a8);
+}
+
+.closed {
+  background: light-dark(#fde2e0, #452020);
+  color: light-dark(#b3261e, #ff8a80);
+}

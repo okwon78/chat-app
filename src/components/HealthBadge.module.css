@@ -1,0 +1,30 @@
+.badge {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.pill {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.ok {
+  composes: pill;
+  background: light-dark(#e3f6e8, #1d3a27);
+  color: light-dark(#1a7f37, #7ee2a8);
+}
+
+.down {
+  composes: pill;
+  background: light-dark(#fdeceb, #402224);
+  color: light-dark(#b3261e, #ff8a80);
+}
+
+.unknown {
+  composes: pill;
+  background: light-dark(#f0f0f0, #333);
+  color: light-dark(#777, #999);
+}
